@@ -14,7 +14,7 @@ This repository is a code sample: a snapshot of the production site's source, sh
 
 - **[Astro](https://astro.build)** with static output and `.astro` components
 - **Modern CSS**, split into small partials (`src/styles/`) and Sass for component styles
-- **Events as Markdown** in an Astro content collection (`src/content/events/`), with a generated page for each event
+- **Dance events as Markdown** in an Astro content collection (`src/content/events/`), with a generated page for each event
 - **[Decap CMS](https://decapcms.org)** at `/admin`, so the studio's owner can add, edit and delete events and gallery photos without touching code
 - **Netlify** hosting, with Netlify Forms for the contact and email-list forms
 - **Optimized media:** responsive images through `astro:assets`, WebM and MP4 video sources, and self-hosted web fonts
