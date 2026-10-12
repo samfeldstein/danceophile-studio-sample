@@ -1,0 +1,128 @@
+---
+// Layout
+import Base from "../layouts/Base.astro";
+
+// Components
+import HorizontalRule from "../components/HorizontalRule.astro";
+import MainContent from "../components/MainContent.astro";
+import Header from "../components/Header.astro";
+import { Image } from "astro:assets";
+
+// Images
+import cover from "/src/images/tom-2.jpg";
+import sailing from "/src/images/sailing.jpg";
+import tor from "/src/images/tor-de-geants.jpg";
+import skiing from "/src/images/tom-skiing.jpg";
+---
+
+<Base title="Tom Masterson">
+  <Header>
+    <h1>Tom Masterson</h1>
+  </Header>
+  <MainContent>
+    <section class="intro">
+      <Image
+        src={cover}
+        class="cover"
+        widths={[240, 540, 720, cover.width]}
+        sizes="(min-width: 1220px) 821px, (min-width: 860px) calc(85.88vw - 210px), calc(100vw - 32px)"
+        alt="A professional head shot of Tom Masterson."
+        fetchpriority="high"
+        loading="eager"
+      />
+      <p class="intro">
+        Dr. Tom Masterson is the founder and director of Danceophile Studio and
+        the <a href="/postoley/">Postoley Dance Ensemble</a>, a performing
+        ethnic dance company specializing in the dance and culture of Ukraine,
+        Poland, and Eastern Europe.
+      </p>
+    </section>
+
+    <section>
+      <h2>Dance Background</h2>
+      <p>
+        Tom studied traditional ethnic dance, choreography and performance with
+        several world-renowned companies, including the Bukovinian and Virsky
+        ensembles in Ukraine and the Marie Curie Skodlowska University Institute
+        for Choreography in Lublin, Poland.
+      </p>
+
+      <p>
+        Some of his favorite dances include "Bukovinian Spring" arranged to the
+        world-famous "Bukovinian Melodies" music, a gypsy dance from Romania
+        appropriately titled "Good Luck", and a beautiful Carpatho-Rus' dance
+        from Ushorod on the Ukrainian-Slovak border.
+      </p>
+
+      <p>
+        Tom also teaches American Swing (Jitterbug, East Coast, Lindy,
+        Charleston), Waltz, Cha-Cha, and Country-Western Dance.
+      </p>
+
+      <a class="more" href="/danceophile-studio/">Sign Up for a Class ☞</a>
+    </section>
+
+    <HorizontalRule />
+
+    <section>
+      <h2>Personal Interests</h2>
+      <p>
+        In addition to dance, <a href="/tutoring/"
+          >Tom teaches physics and mathematics</a
+        >, speaks several languages, runs ultra-marathons, climbs high peaks
+        around the world, and is a master chef. He is the recipient of the
+        “Legends of Dance in Colorado” award and the Boulder “Pacesetter of the
+        Year” award.
+      </p>
+
+      <p>
+        Tom has thirty-five years' experience teaching mountaineering, skiing,
+        and wilderness survival skills. He is the owner of and principal
+        instructor for <a href="/back-country-tours/">Back Country Tours</a>, a
+        mountain guide service and ski and mountaineering school recognized by
+        the Professional Ski Instructors of America.
+      </p>
+
+      <Image
+        src={skiing}
+        widths={[240, 540, 720, skiing.width]}
+        sizes="(min-width: 1220px) 821px, (min-width: 860px) calc(85.88vw - 210px), calc(100vw - 32px)"
+        alt="Tom Masterson skiing."
+      />
+
+      <Image
+        src={sailing}
+        widths={[240, 540, 720, sailing.width]}
+        sizes="(min-width: 1220px) 821px, (min-width: 860px) calc(85.88vw - 210px), calc(100vw - 32px)"
+        alt="Tom Masterson sailing."
+        style="margin: 1rem 0;"
+      />
+
+      <Image
+        src={tor}
+        widths={[240, 540, 720, tor.width]}
+        sizes="(min-width: 1220px) 821px, (min-width: 860px) calc(85.88vw - 210px), calc(100vw - 32px)"
+        alt="Tom Masterson at the Tor de Geants."
+      />
+    </section>
+  </MainContent>
+</Base>
+
+<style>
+  h3 {
+    margin-top: 4rem;
+  }
+
+  p.intro,
+  .details {
+    font-variant: small-caps;
+    padding: 1rem;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+  }
+
+  .cover {
+    border: 0.5rem solid white;
+  }
+</style>

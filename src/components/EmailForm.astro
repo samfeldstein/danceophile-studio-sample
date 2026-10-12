@@ -1,0 +1,134 @@
+<!-- If you ever feel like it, a better way to do this would be to create a parent form component, then add content as needed. That way you don't double up on styles. -->
+<form name="email-list" action="/form-submission/" method="POST" netlify>
+  <header>
+    <h3>Join Our Email List</h3>
+    <small>Receive updates about upcoming events.</small>
+  </header>
+  <fieldset>
+    <div>
+      <label for="email-list-first-name">First Name</label>
+      <input
+        type="text"
+        name="email-list-first-name"
+        id="email-list-first-name"
+        placeholder="Your first name"
+      />
+    </div>
+    <div>
+      <label for="email-list-last-name">Last Name</label>
+      <input
+        type="text"
+        name="email-list-last-name"
+        id="email-list-last-name"
+        placeholder="Your last name"
+      />
+    </div>
+    <div>
+      <label for="email-list-email"> Email Address </label>
+      <input
+        type="email"
+        name="email-list-email"
+        id="email-list-email"
+        required
+        placeholder="you@example.com"
+      />
+    </div>
+  </fieldset>
+
+  <button type="submit">Submit</button>
+</form>
+
+<style>
+  h3 {
+    font-size: calc(1.75rem + 1vw);
+    margin-bottom: 0;
+  }
+
+  form {
+    display: grid;
+    gap: 2rem;
+    font-family: var(--font-4);
+    border-radius: 4px;
+    padding: 2rem;
+    min-width: 100%;
+    box-shadow: #666 0 2px 4px;
+  }
+
+  form header {
+    display: grid;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  small {
+    font-style: italic;
+  }
+
+  form div {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  form .checkbox {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  fieldset {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    border: none;
+    padding: 0;
+  }
+
+  legend {
+    text-align: center;
+  }
+
+  label {
+    font-family: var(--font-4-bold);
+    font-weight: 700;
+  }
+
+  input,
+  textarea {
+    padding: 0.5rem;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: var(--color-2);
+  }
+
+  input,
+  button,
+  textarea {
+    border-radius: 4px;
+    border-style: solid;
+    border-color: var(--color-2);
+    border-width: 1px;
+  }
+
+  button {
+    background-color: var(--color-2);
+    color: var(--background-color);
+    transition: all 0.2s ease;
+    border-style: solid;
+    border-color: var(--color-2);
+    border-radius: 2px;
+    border-width: 1px;
+    padding: 1rem 0;
+    cursor: pointer;
+    font-variant: small-caps;
+    font-size: inherit;
+  }
+
+  button:hover,
+  button:focus {
+    background-color: var(--background-color);
+    color: var(--color-2);
+  }
+</style>

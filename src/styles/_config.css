@@ -1,0 +1,15 @@
+:root {
+  --background-color: #FFF2E8;
+  --color-2: #b40002;
+  --color-3: #0057b7;
+  --color-4: #212121;
+  --color-5: #FFDD00;
+
+  --font-1: "Lissain", Georgia, 'Times New Roman', Times, serif;
+  --font-3: "Ostrovsky", Arial, Helvetica, sans-serif;
+  --font-4: "Tinos", 'Times New Roman', Times, serif;
+  --font-4-bold: "Tinos Bold", 'Times New Roman', Times, serif;
+  --font-5: "LevType", 'Times New Roman', Times, serif;
+
+  --font-size-base: calc(1.25rem + 0.5vw);
+}

@@ -1,0 +1,44 @@
+---
+import Nav from "./Nav.astro";
+---
+
+<aside>
+  <div class="container">
+    <Nav />
+  </div>
+</aside>
+
+<style>
+  aside {
+    max-width: 20rem;
+    text-align: center;
+    /* Makes bottom flush with content bottom */
+    margin-bottom: 1rem;
+
+    @media screen and (max-width: 849px) {
+      display: none;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: sticky;
+    top: 1rem;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    padding: 1rem;
+  }
+</style>
+
+<style is:global>
+  aside a {
+    font-size: 1rem;
+  }
+
+  aside .links {
+    justify-content: space-between;
+  }
+</style>

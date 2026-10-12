@@ -1,0 +1,69 @@
+---
+import Social from "./Social.astro";
+---
+
+<nav>
+  <div class="links">
+    <div class="title">Dance</div>
+    <a href="/">Home</a>
+    <a href="/danceophile-studio/">Danceophile Studio</a>
+    <a href="/postoley/">Postoley Dance Ensemble</a>
+    <a href="/folk-dance-classes/">Folk Dance Classes</a>
+    <a href="/folk-dance-database.xls">Folk Dance Database</a>
+    <a href="/tom-masterson/">Meet Tom Masterson</a>
+    <a href="/gallery/">Gallery</a>
+  </div>
+
+  <div class="links">
+    <div class="title">More</div>
+    <a href="/tutoring/">Physics & Math Tutoring</a>
+    <a href="/back-country-tours">Back Country Tours</a>
+    <a href="/contact/">Contact</a>
+  </div>
+</nav>
+<Social />
+
+<style>
+  nav,
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    border-radius: 2px;
+    background-color: var(--background-color);
+  }
+
+  .contact {
+    align-items: center;
+  }
+
+  a {
+    font-family: var(--font-4);
+    font-variant: small-caps;
+    padding: 0.5em 1em;
+    border-radius: 2px;
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+  }
+
+  a.contact {
+    display: block;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .title {
+    font-family: var(--font-1);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+</style>

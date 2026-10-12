@@ -1,0 +1,59 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+  /* Force scrollbar */
+  overflow-y: auto;
+}
+
+body {
+  font-weight: 400;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  animation: fadeIn .5s ease-in forwards;
+}
+
+pre {
+  overflow: auto;
+}
+
+/* Add the correct font weight in Chrome, Edge, and Safari */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+summary {
+  cursor: pointer;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

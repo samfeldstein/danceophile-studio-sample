@@ -1,0 +1,75 @@
+---
+import ReadableDate from "./ReadableDate.astro";
+import { getCollection } from "astro:content";
+const events = await getCollection("events");
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+const upcomingEvents = events.filter((event) => {
+  const eventDate = new Date(event.data.date);
+  return eventDate >= today;
+});
+
+upcomingEvents.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+---
+
+<div class="events">
+  {
+    upcomingEvents.slice(0, 3).map((event) => (
+      <div class="upcoming-event">
+        <h3 class="event">
+          <a href={`/events/${event.id}/`}>{event.data.title}</a>
+        </h3>
+        <p class="details">
+          <time>
+            <ReadableDate date={event.data.date} />
+          </time>{" "}
+          | <time>{event.data.start}</time> | {event.data.location}
+        </p>
+      </div>
+    ))
+  }
+</div>
+
+<style lang="scss">
+  div.events {
+    display: grid;
+    gap: 2rem;
+  }
+
+  div.upcoming-event {
+    padding: 2rem;
+    text-align: center;
+    display: grid;
+    gap: 1rem;
+    max-width: 60rem;
+  }
+
+  h3.event {
+    font-size: calc(2rem + 0.5vw);
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+      text-decoration-thickness: 0.1em;
+    }
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  p {
+    /* Overrides global p rule. */
+    text-align: unset;
+    margin: 0;
+    font-size: calc(1.25rem + 0.5vw);
+  }
+</style>

@@ -1,0 +1,54 @@
+---
+// Layout
+import Base from "../layouts/Base.astro";
+
+// Components
+import MainContent from "../components/MainContent.astro";
+import Header from "../components/Header.astro";
+import { Image } from "astro:assets";
+
+// Images
+import cover from "/src/images/workshops-2.jpg";
+import suzi from "/src/images/teaching-with-suzi.jpg";
+import plaza from "/src/images/folk-dancing-plaza.jpg";
+---
+
+<Base title="Folk Dance Classes">
+  <Header>
+    <h1>Folk Dance Classes</h1>
+  </Header>
+  <MainContent>
+    <Image
+      src={cover}
+      class="cover"
+      widths={[240, 540, 720, cover.width]}
+      sizes="(min-width: 1220px) 821px, (min-width: 860px) calc(85.88vw - 210px), calc(100vw - 32px)"
+      alt="Tom Masterson posing with a group of Folk Dance students."
+      fetchpriority="high"
+      loading="eager"
+    />
+
+    <Image
+      src={suzi}
+      class="cover"
+      widths={[240, 540, 720, suzi.width]}
+      sizes="(min-width: 1220px) 821px, (min-width: 860px) calc(85.88vw - 210px), calc(100vw - 32px)"
+      alt="Tom Masterson teaching folk dance with a dance partner."
+      style="margin: 1rem 0;"
+    />
+
+    <Image
+      src={plaza}
+      class="cover"
+      widths={[240, 540, 720, plaza.width]}
+      sizes="(min-width: 1220px) 821px, (min-width: 860px) calc(85.88vw - 210px), calc(100vw - 32px)"
+      alt="Folk dancers on a plaza."
+    />
+
+    <p>
+      Tom is available for folk dance workshops and classes. <a href="/contact/"
+        >Contact</a
+      > him for more info.
+    </p>
+  </MainContent>
+</Base>

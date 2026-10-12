@@ -1,0 +1,48 @@
+---
+import Base from "../../layouts/Base.astro";
+
+// Components
+import HorizontalRule from "../../components/HorizontalRule.astro";
+import MainContent from "../../components/MainContent.astro";
+import Header from "../../components/Header.astro";
+import ReadableDate from "../../components/ReadableDate.astro";
+import UpcomingEvents from "../../components/UpcomingEvents.astro";
+
+import "/src/styles/_events.css";
+
+import { getCollection } from "astro:content";
+
+import { Image } from "astro:assets";
+
+// Images
+import cover from "/src/images/workshops-1.jpg";
+
+const events = await getCollection("events");
+
+events.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+---
+
+<Base title="Events">
+  <Header>
+    <h1>Events</h1>
+  </Header>
+  <MainContent>
+    <Image
+      src={cover}
+      widths={[240, 540, 720, cover.width]}
+      sizes="(min-width: 1220px) 821px, (min-width: 860px) calc(85.88vw - 210px), calc(100vw - 32px)"
+      alt="Tom and a class of Postoley folk dancers posing for the camera."
+      fetchpriority="high"
+      loading="eager"
+    />
+    <p class="intro">
+      Danceophile Studio hosts and promotes dance events in Boulder, Northern
+      Colorado, and the Denver Metro Area. Events include social dances,
+      performances, workshops, and more.
+    </p>
+
+    <HorizontalRule />
+
+    <UpcomingEvents />
+  </MainContent>
+</Base>

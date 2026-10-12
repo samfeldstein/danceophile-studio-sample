@@ -1,0 +1,30 @@
+---
+import UpcomingEvents from "../UpcomingEvents.astro";
+
+import { Image } from "astro:assets";
+import danceSchedule from "/src/images/dancing-under-the-stars-2026.jpg";
+---
+
+<section id="upcoming-events">
+  <h2>Upcoming Events</h2>
+  <Image src={danceSchedule} alt="The 2026 Dancing Under the Stars Schedule." />
+  <UpcomingEvents />
+  <p>
+    See all our upcoming events on the <a href="/events/">Events page</a>.
+  </p>
+</section>
+
+<style lang="scss">
+  section {
+    margin: 10rem auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  p {
+    font-size: calc(1.25rem + 0.5vw);
+  }
+</style>

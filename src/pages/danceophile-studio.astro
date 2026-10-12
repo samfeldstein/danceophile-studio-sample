@@ -1,0 +1,195 @@
+---
+// Components
+import Base from "../layouts/Base.astro";
+import HorizontalRule from "../components/HorizontalRule.astro";
+import MainContent from "../components/MainContent.astro";
+import Header from "../components/Header.astro";
+import { Image } from "astro:assets";
+
+// Images
+import cover from "/src/images/teaching-with-suzi.jpg";
+import wedding from "/src/images/wedding.jpg";
+---
+
+<Base title="Danceophile Studio">
+  <Header>
+    <h1>Danceophile Studio</h1>
+  </Header>
+  <MainContent>
+    <Image
+      src={cover}
+      widths={[240, 540, 720, cover.width]}
+      sizes="(min-width: 1220px) 821px, (min-width: 860px) calc(85.88vw - 210px), calc(100vw - 32px)"
+      alt="Two ballroom swing dancers dancing under lights."
+      fetchpriority="high"
+      loading="eager"
+    />
+
+    <p class="intro">
+      Danceophile Studio offers private and group instruction in ballroom,
+      swing, folk, contra, and country dance, led by Colorado Legends of Dance
+      recipient <a href="/tom-masterson/">Tom Masterson</a>. <strong
+        >Classes are open to all experience levels. No partner needed.</strong
+      >
+    </p>
+
+    <section>
+      <h2 id="ballroom-dance-lessons">Introduction to Ballroom Dance</h2>
+      <p>
+        A four-week introduction to the smooth Foxtrot, upbeat Swing, graceful
+        Waltz, and seductive Tango with an emphasis on leading, following, and
+        communicating with a partner.
+      </p>
+
+      <p><strong>No experience or partner needed.</strong></p>
+
+      <video
+        controls="controls"
+        preload="auto"
+        poster="/images/swing-video-cover.jpg"
+      >
+        <source src="/videos/swing-with-stephanie.mp4" type="video/mp4" />
+        <source src="/videos/swing-with-stephanie.webm" type="video/webm" />
+      </video>
+
+      <section class="details">
+        <h3 class="vis-hid">Details</h3>
+        <div>
+          <h4>Time</h4>
+          <div>
+            Sundays, 6:30pm - 8pm. Call for information about upcoming classes (<a
+              href="tel:+13034996363">303-499-6363</a
+            >).
+          </div>
+        </div>
+        <div>
+          <h4>Place</h4>
+          <div>
+            <a
+              class="address contact"
+              href="https://maps.app.goo.gl/7fttA6CCH5VmFk1S9"
+              target="_blank"
+            >
+              <div>Danceophile Studio</div>
+              <div>250 31st St</div>
+              <div>Boulder, CO 80305</div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <HorizontalRule />
+
+    <section class="blue">
+      <h2 id="private-instruction">
+        Wedding Dance Choreography & Private Instruction
+      </h2>
+      <Image
+        src={wedding}
+        widths={[240, 540, 720, wedding.width]}
+        sizes="(min-width: 1000px) 604px, (min-width: 860px) 62.5vw, (min-width: 680px) 604px, 93.33vw"
+        alt="A bride and groom performing a dip."
+      />
+      <p>
+        We offer private instruction in Ballroom, Swing, Folk, Contra, Country,
+        and Performance, choreographed to your favorite music. We are happy to
+        instruct individuals, couples, groups, parties, and wedding receptions.
+      </p>
+
+      <p>
+        Classes are held at <a
+          class="address"
+          href="https://maps.app.goo.gl/7fttA6CCH5VmFk1S9"
+          target="_blank">Danceophile Studio</a
+        >, and are available by appointment.
+      </p>
+    </section>
+
+    <HorizontalRule />
+
+    <section id="niwot">
+      <h2>Dancing in Niwot</h2>
+      <video controls="controls" preload="auto" poster="/images/cottonwood.jpg">
+        <source src="/videos/cottonwood.mp4" type="video/mp4" />
+        <source src="/videos/cottonwood.webm" type="video/webm" />
+      </video>
+      <p>
+        Join us every Friday at 7PM all summer long for Salsa, Swing, Waltz,
+        Contra, and Folk dancing outside on Cottonwood Square at the corner of
+        79th and Niwot.
+      </p>
+    </section>
+
+    <HorizontalRule />
+
+    <section id="folk-dancing">
+      <h2>Folk Dancing in the Mountains</h2>
+      <p>
+        Join us at the <a
+          class="address"
+          href="https://maps.app.goo.gl/AiY4UTiUy9nm1upr5"
+          target="_blank">Nederland Community Center</a
+        > to meet wonderful folks, eat great snacks, and dance fun dances from around
+        the world.
+      </p>
+
+      <p><a href="/contact/">Contact Tom</a> for the updated schedule.</p>
+    </section>
+  </MainContent>
+</Base>
+
+<style>
+  h2 {
+    margin-top: 1em;
+  }
+
+  h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  section {
+    text-align: center;
+  }
+
+  .intro,
+  .details {
+    padding: 1rem;
+    font-variant: small-caps;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    padding: 1rem;
+    font-family: var(--font-4);
+    font-variant: small-caps;
+  }
+
+  section.details {
+    text-align: center;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .vis-hid {
+    position: absolute;
+    translate: -2000%;
+  }
+
+  video {
+    box-shadow: #666 0 4px 10px;
+    border-radius: 2px;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+</style>

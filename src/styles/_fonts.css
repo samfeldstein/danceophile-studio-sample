@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "Lissain";
+  src: local("Lissain"),
+    url("/fonts/Lissain.woff2") format("woff2"),
+    url("/fonts/Lissain.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ostrovsky";
+  src: local("Ostrovsky"),
+    url("/fonts/OstrovskyBold.woff2") format("woff2"),
+    url("/fonts/OstrovskyBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tinos";
+  src: local("Tinos"),
+    url("/fonts/Tinos-Regular.woff2") format("woff2"),
+    url("/fonts/Tinos-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tinos Bold";
+  src: local("Tinos Bold"),
+    url("/fonts/Tinos-Bold.woff2") format("woff2"),
+    url("/fonts/Tinos-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LevType";
+  src:
+    url("/fonts/LevTypeHryvnia-Regular.woff2") format("woff2"),
+    url("/fonts/LevTypeHryvnia-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grusskarten";
+  src:
+    url("/fonts/GrusskartenGotisch.woff2") format("woff2"),
+    url("/fonts/GrusskartenGotisch.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Showboat";
+  src:
+    url("/fonts/Showboat.woff2") format("woff2"),
+    url("/fonts/Showboat.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+strong,
+b {
+  font-family: "Tinos Bold";
+}

@@ -1,0 +1,406 @@
+---
+// Components
+import Head from "../components/Head.astro";
+import Skiplink from "../components/Skiplink.astro";
+import Copyright from "../components/Copyright.astro";
+import HorizontalRule from "../components/HorizontalRule.astro";
+import EmailForm from "../components/EmailForm.astro";
+import ContactForm from "../components/ContactForm.astro";
+import UpcomingEvents from "../components/home/UpcomingEventsSection.astro";
+import { Image } from "astro:assets";
+
+// Images
+import flyout from "/src/images/flyout.jpg";
+import lift from "/src/images/tom-greg-lift.jpg";
+import tomLaurie from "/src/images/tom-laurie.jpg";
+import niwot from "/src/images/cottonwood.jpg";
+---
+
+<html lang="en">
+  <Head title="Home">
+    <link
+      rel="preload"
+      href="/fonts/GrusskartenGotisch.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/OstrovskyBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+  </Head>
+  <body>
+    <Skiplink />
+    <main id="main-content">
+      <header>
+        <h1>Home</h1>
+        <h2 class="postoley">
+          <a href="/postoley/">
+            <div>
+              <span class="drop-cap">Postoley</span>
+              <span class="drop-cap">Dance</span>
+            </div>
+            <div class="drop-cap">Ensemble</div>
+            <div class="small">Постоли</div>
+          </a>
+        </h2>
+        <h2 class="danceophile">
+          <a href="/danceophile-studio/">
+            <div class="drop-cap">Danceophile</div>
+            <div class="drop-cap">Studio</div>
+            <div class="small">with Tom Masterson</div>
+          </a>
+        </h2>
+      </header>
+      <HorizontalRule />
+      <section class="pics">
+        <a class="pics postoley" href="/postoley/">
+          <Image
+            src={flyout}
+            widths={[240, 540, 720, flyout.width]}
+            sizes="(min-width: 1520px) 672px, (min-width: 860px) 45.31vw, calc(100vw - 32px)"
+            alt="Tom Masterson and a dance partner performing a Ukrainian folk dance flyout."
+            fetchpriority="high"
+            loading="eager"
+          />
+
+          <Image
+            src={lift}
+            widths={[240, 540, 720, lift.width]}
+            sizes="(min-width: 1520px) 672px, (min-width: 860px) 45.31vw, calc(100vw - 32px)"
+            alt="Tom Masterson and a dance partner performing a Ukrainian folk dance lift."
+          />
+        </a>
+        <a class="pics danceophile" href="/danceophile-studio/">
+          <Image
+            src={tomLaurie}
+            widths={[240, 540, 720, tomLaurie.width]}
+            sizes="(min-width: 1520px) 672px, (min-width: 860px) 45.31vw, calc(100vw - 32px)"
+            alt="Tom Masterson and a dance partner performing a waltz move."
+            fetchpriority="high"
+            loading="eager"
+          />
+          <Image
+            src={niwot}
+            widths={[240, 540, 720, niwot.width]}
+            sizes="(min-width: 1520px) 672px, (min-width: 860px) 45.31vw, calc(100vw - 32px)"
+            alt="A crowd of dancers dancing on a public square."
+          />
+        </a>
+      </section>
+
+      <UpcomingEvents />
+
+      <section class="directory">
+        <h2>Site Directory</h2>
+        <div class="directory links">
+          <a href="/danceophile-studio/">Danceophile Studio</a>
+          <a href="/postoley/">Postoley Dance Ensemble</a>
+          <a href="/tutoring/">Physics & Math Tutoring</a>
+          <a href="/back-country-tours/">Back Country Tours</a>
+          <a href="/folk-dance-classes/">Folk Dance Classes</a>
+          <a href="/folk-dance-database.xls">Folk Dance Database</a>
+          <a href="/tom-masterson/">Meet Tom Masterson</a>
+          <a href="/gallery/">Gallery</a>
+        </div>
+      </section>
+
+      <section class="contact">
+        <h2>Contact</h2>
+        <div class="forms">
+          <ContactForm />
+          <EmailForm />
+        </div>
+
+        <div class="links contact">
+          <div>
+            <h3>Email</h3>
+            <a class="contact" href="mailto:masterst@colorado.edu"
+              >masterst@colorado.edu</a
+            >
+          </div>
+          <div class="address">
+            <h3>Mailing Address</h3>
+            <a
+              class="address contact"
+              href="https://maps.app.goo.gl/7fttA6CCH5VmFk1S9"
+              target="_blank"
+            >
+              <div>Danceophile Studio</div>
+              <div>250 31st St</div>
+              <div>Boulder, CO 80305</div>
+            </a>
+          </div>
+          <div>
+            <h3>Phone</h3>
+            <a class="contact" href="tel:+13034996363">(303) 499-6363</a>
+          </div>
+          <div class="social">
+            <a href="https://www.instagram.com/mastersont3" target="_blank">
+              <span class="social-label">Instagram</span>
+              <svg
+                class="instagram"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                width="40"
+                height="40"
+                ><path
+                  d="M194.4 211.7a53.3 53.3 0 1 0 59.3 88.7 53.3 53.3 0 1 0-59.3-88.7zm142.3-68.4c-5.2-5.2-11.5-9.3-18.4-12-18.1-7.1-57.6-6.8-83.1-6.5-4.1 0-7.9.1-11.2.1-3.3 0-7.2 0-11.4-.1-25.5-.3-64.8-.7-82.9 6.5-6.9 2.7-13.1 6.8-18.4 12s-9.3 11.5-12 18.4c-7.1 18.1-6.7 57.7-6.5 83.2 0 4.1.1 7.9.1 11.1s0 7-.1 11.1c-.2 25.5-.6 65.1 6.5 83.2 2.7 6.9 6.8 13.1 12 18.4s11.5 9.3 18.4 12c18.1 7.1 57.6 6.8 83.1 6.5 4.1 0 7.9-.1 11.2-.1 3.3 0 7.2 0 11.4.1 25.5.3 64.8.7 82.9-6.5 6.9-2.7 13.1-6.8 18.4-12s9.3-11.5 12-18.4c7.2-18 6.8-57.4 6.5-83 0-4.2-.1-8.1-.1-11.4s0-7.1.1-11.4c.3-25.5.7-64.9-6.5-83-2.7-6.9-6.8-13.1-12-18.4zm-67.1 44.5a82 82 0 1 1-91.2 136.4 82 82 0 1 1 91.1-136.4zm29.2-1.3c-3.1-2.1-5.6-5.1-7.1-8.6s-1.8-7.3-1.1-11.1 2.6-7.1 5.2-9.8 6.1-4.5 9.8-5.2 7.6-.4 11.1 1.1 6.5 3.9 8.6 7 3.2 6.8 3.2 10.6c0 2.5-.5 5-1.4 7.3s-2.4 4.4-4.1 6.2-3.9 3.2-6.2 4.2-4.8 1.5-7.3 1.5c-3.8 0-7.5-1.1-10.6-3.2zM448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96zm-91 293c-18.7 18.7-41.4 24.6-67 25.9-26.4 1.5-105.6 1.5-132 0-25.6-1.3-48.3-7.2-67-25.9s-24.6-41.4-25.8-67c-1.5-26.4-1.5-105.6 0-132 1.3-25.6 7.1-48.3 25.8-67s41.5-24.6 67-25.8c26.4-1.5 105.6-1.5 132 0 25.6 1.3 48.3 7.1 67 25.8s24.6 41.4 25.8 67c1.5 26.3 1.5 105.4 0 131.9-1.3 25.6-7.1 48.3-25.8 67z"
+                ></path></svg
+              >
+            </a>
+            <a
+              href="https://www.facebook.com/tom.masterson.3348/"
+              target="_blank"
+            >
+              <span class="social-label">Facebook</span>
+              <svg
+                class="facebook"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                width="40"
+                height="40"
+                ><path
+                  d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h98.2V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480h129c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"
+                ></path></svg
+              >
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <Copyright />
+    </footer>
+  </body>
+</html>
+
+<style lang="scss">
+  h1 {
+    /* Hide visually */
+    position: absolute;
+    translate: -2000%;
+  }
+
+  main {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+  }
+
+  header {
+    display: grid;
+    gap: 2rem;
+    padding-top: 1rem;
+  }
+
+  header h2 {
+    font-size: calc(1.85rem + 2vw);
+    /* Without this, html background shows for some reason. */
+    margin: 0;
+  }
+
+  section.directory {
+    margin: 10rem 0;
+  }
+
+  section.pics {
+    box-shadow: #666 0px 4px 4px;
+    background-color: white;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    display: grid;
+  }
+
+  a.pics {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: space-between;
+  }
+
+  h2.danceophile {
+    color: var(--color-3);
+  }
+
+  h2 a {
+    text-decoration: none;
+    color: unset;
+  }
+
+  .headers {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .drop-cap {
+    -webkit-text-stroke: 0.005em black;
+  }
+
+  .drop-cap::first-letter {
+    font-size: 1.75em;
+    font-family: "Grusskarten", Georgia, "Times New Roman", Times, serif;
+    font-weight: 100;
+  }
+
+  span.drop-cap {
+    display: inline-block;
+  }
+
+  .small {
+    font-size: 0.65em;
+    margin-top: 1em;
+  }
+
+  section.contact a {
+    color: var(--color-2);
+  }
+
+  div.contact {
+    margin-top: 8rem;
+  }
+
+  .links.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4rem;
+  }
+
+  .directory.links {
+    display: grid;
+    text-align: center;
+    gap: 2em 4em;
+  }
+
+  .directory.links a {
+    color: black;
+    border-bottom-style: dotted;
+    border-bottom-width: 1px;
+    border-bottom-color: #7a7a7a;
+    padding-bottom: 1em;
+  }
+
+  /* All links */
+  .links a {
+    text-decoration: none;
+    font-family: var(--font-4-bold);
+    font-weight: 700;
+    font-variant: small-caps;
+    font-size: calc(1.5rem + 0.5vw);
+  }
+
+  .links a:hover,
+  .links a:hover,
+  .links a:focus,
+  .links a:focus {
+    text-decoration: underline;
+    color: var(--color-2);
+    text-decoration-thickness: 0.045em;
+    text-underline-offset: 0.15em;
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-family: var(--font-4-bold);
+    font-weight: 700;
+    font-variant: small-caps;
+    font-size: calc(1.75rem + 1vw);
+  }
+
+  div.forms {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+
+  .social {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .social-label {
+    position: absolute;
+    translate: -2000%;
+  }
+
+  svg {
+    transition:
+      fill 0.2s ease-in-out,
+      background-color 0.2s ease;
+    box-shadow: #666 0 1px 1px;
+    border-radius: 7px;
+  }
+
+  svg {
+    background-color: var(--color-2);
+    fill: var(--background-color);
+    width: 40px;
+    height: auto;
+  }
+
+  svg:hover,
+  svg:focus {
+    background-color: var(--background-color);
+    fill: var(--color-2);
+  }
+
+  footer {
+    margin-top: 4rem;
+  }
+
+  p.see-more {
+    font-size: calc(1.25rem + 0.5vw);
+    font-variant: normal;
+    text-align: center;
+  }
+
+  /* Media queries */
+
+  @media screen and (min-width: 850px) {
+    header {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    section.pics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .directory.links {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
+
+<style is:global>
+  form {
+    font-size: calc(1.25rem + 0.5vw);
+  }
+
+  img {
+    box-shadow: #666 0 2px 4px;
+  }
+
+  .copyright a {
+    font-family: "Lissain";
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .copyright a:hover,
+  .copyright a:focus {
+    text-decoration: none;
+  }
+</style>

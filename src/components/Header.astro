@@ -1,0 +1,21 @@
+---
+import HorizontalRule from "./HorizontalRule.astro";
+import MobileMenu from "./MobileMenu.astro";
+---
+
+<MobileMenu />
+<header>
+  <slot />
+  <div class="hr">
+    <HorizontalRule />
+  </div>
+</header>
+
+<style>
+  header {
+    padding: 0 0.5rem;
+    max-width: 75rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+</style>

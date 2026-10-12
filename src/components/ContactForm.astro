@@ -1,0 +1,150 @@
+<form name="contact" action="/form-submission/" method="POST" netlify>
+  <h3>Send Us a Message</h3>
+  <fieldset>
+    <div>
+      <label for="contact-first-name">First Name</label>
+      <input
+        type="text"
+        id="contact-first-name"
+        name="contact-first-name"
+        required
+        placeholder="Your first name"
+      />
+    </div>
+
+    <div>
+      <label for="contact-last-name">Last Name</label>
+      <input
+        type="text"
+        id="contact-last-name"
+        name="contact-last-name"
+        placeholder="Your last name"
+      />
+    </div>
+
+    <div>
+      <label for="contact-email">Email</label>
+      <input
+        type="email"
+        id="contact-email"
+        name="contact-email"
+        required
+        placeholder="you@example.com"
+      />
+    </div>
+
+    <div class="checkbox">
+      <input
+        type="checkbox"
+        id="email-list"
+        name="email-list"
+        checked
+        value="yes"
+      />
+      <label for="email-list">Join our email list</label>
+    </div>
+
+    <div>
+      <label for="contact-phone">Phone Number</label>
+      <input
+        type="tel"
+        id="contact-phone"
+        name="contact-phone"
+        placeholder="(555) 555-5555"
+        pattern="[0-9\s\(\)\-\+]+"
+      />
+    </div>
+
+    <div>
+      <label for="contact-message">Message</label>
+      <textarea
+        id="contact-message"
+        name="contact-message"
+        rows="5"
+        placeholder="Your message..."
+        required></textarea>
+    </div>
+  </fieldset>
+
+  <button type="submit">Send</button>
+</form>
+
+<style>
+  h3 {
+    font-size: calc(1.75rem + 1vw);
+  }
+
+  form {
+    display: grid;
+    gap: 2rem;
+    font-family: var(--font-4);
+    border-radius: 4px;
+    padding: 2rem;
+    min-width: 100%;
+    box-shadow: #666 0 2px 4px;
+  }
+
+  form div {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  form .checkbox {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  fieldset {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    border: none;
+    padding: 0;
+  }
+
+  label {
+    font-family: var(--font-4-bold);
+    font-weight: 700;
+  }
+
+  input,
+  textarea {
+    padding: 0.5rem;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: var(--color-2);
+  }
+
+  input,
+  button,
+  textarea {
+    border-radius: 4px;
+    border-style: solid;
+    border-color: var(--color-2);
+    border-width: 1px;
+  }
+
+  button {
+    background-color: var(--color-2);
+    color: var(--background-color);
+    transition: all 0.2s ease;
+    border-style: solid;
+    border-color: var(--color-2);
+    border-radius: 2px;
+    border-width: 1px;
+    padding: 1rem 0;
+    cursor: pointer;
+    font-variant: small-caps;
+    font-size: inherit;
+  }
+
+  button:hover,
+  button:focus {
+    background-color: var(--background-color);
+    color: var(--color-2);
+  }
+</style>
