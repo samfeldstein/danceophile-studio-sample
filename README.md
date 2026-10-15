@@ -4,9 +4,9 @@
   </a>
 </p>
 
-# 🕺 Danceophile Studio
+# 🕺 Postoley Dance Ensemble
 
-A website for an independent folk dance studio in Boulder, CO. The live site is at [danceophile.com](https://danceophile.com).
+A website for Postoley Dance Ensemble and Danceophile Studio, an independent folk dance studio in Boulder, CO. The live site is at [danceophile.com](https://danceophile.com).
 
 This repository is a portfolio code sample: a snapshot of the production site's source, shared without its commit history. It is meant to be read, not forked or run.
 
